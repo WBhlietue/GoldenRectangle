@@ -34,7 +34,7 @@ const colors = [
 ];
 
 const dirs = ["row", "column", "row-reverse", "column-reverse"];
-
+const ani = ["left", "top", "right", "bottom"]
 Set();
 
 function Set() {
@@ -85,7 +85,7 @@ function Set() {
       return;
     }
     var test =
-      "<rect height='" +
+      "<rect class='haku-from-"+ani[num%ani.length]+"' haku-ani-delay='"+100*num+"' height='" +
       val +
       "' width='" +
       val +
@@ -136,7 +136,7 @@ function Set() {
         break;
     }
     svg.innerHTML +=
-      '<path id="path' +
+      '<path  id="path' +
       num +
       '" d="' +
       describeArc(mx, my, val, st, end) +
@@ -146,25 +146,14 @@ function Set() {
       '; filter: url(#glow);" stroke-width="' +
       w +
       '"/>';
-    svg.innerHTML +=
-      '<path id="path' +
-      num +
-      '" d="' +
-      describeArc(mx1, my1, val, st, end) +
-      '" fill="none" style="fill-opacity: 0' +
-      "; stroke: " +
-      lineColor +
-      '; filter: url(#glow);" stroke-width="' +
-      w +
-      '"/>';
 
     CreateRect(val * (goldenRec - 1));
   }
-
   if (bloom) {
     // var mask = document.getElementById("mask")
     // // mask.className="masked-element";
     // mask.style.backgroundColor= "#ff0000"
     // document.getElementById("main").appendChild(mask)
   }
+  OnScroll()
 }
