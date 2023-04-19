@@ -1,0 +1,39 @@
+:root {
+  --backGround: #ffffff;
+  --glow:1
+}
+
+
+#main {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.rectangle {
+  display: flex;
+}
+.innerRectange {
+  background-color: var(--backGround);
+  position: relative;
+}
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.black {
+  background-color: black;
+}
+
+.masked-element {
+  mix-blend-mode: multiply;
+  position: fixed;
+  height: 300%;
+  width: 300%;
+  z-index: 10;
+  left:0;
+  top:0;
+  background-color: #ffffff;
+}
